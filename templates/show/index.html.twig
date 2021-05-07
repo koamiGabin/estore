@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <div class="container mt-4">
+        <h2 class="title p-1">{{article.title}}</h2> 
+        <div class="img-fluid">
+            <img width="100%" src="/assets/blog/images/{{article.image}}" alt="{{article.title}}">
+        </div>
+        <p class="date"> Ajouté le {{ article.createdAt | date("d/m/y") }} a {{ article.createdAt | date("h:i:s") }}
+        par <span class="author">{{article.author}}</span> </p>
+        
+        <p class="content text-justify">
+           {{ article.content| raw }} 
+        </p>
+
+         <a href="https://code_whatsapp.php" class="btn btn-primary">Contacter le vendeur <br>via Whatsapp </a>
+                       
+    </div>
+{% endblock %}
